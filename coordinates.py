@@ -42,10 +42,10 @@ async def main() -> None:
             if debug:
                 print(f"Found tile {tile_to_find.name} at {tile_to_find.latitude}, {tile_to_find.longitude}")
             if (post):
-                r = requests.post(API_URL + "api/coordinates", json={'id':TILE_NAME, 'latitude':tile.latitude, 'longitude':tile.longitude}, headers={ 'x-api-password': API_PASSWORD })
+                r = requests.post(API_URL + "api/coordinates", json={'id':TILE_NAME, 'latitude':tile_to_find.latitude, 'longitude':tile_to_find.longitude}, headers={ 'x-api-password': API_PASSWORD })
                 print(r)
                 return
-            r = requests.put(API_URL + "api/coordinates", json={'id':TILE_NAME, 'latitude':tile.latitude, 'longitude':tile.longitude}, headers={ 'x-api-password': API_PASSWORD })
+            r = requests.put(API_URL + "api/coordinates", json={'id':TILE_NAME, 'latitude':tile_to_find.latitude, 'longitude':tile_to_find.longitude}, headers={ 'x-api-password': API_PASSWORD })
             print(r)
 
 
